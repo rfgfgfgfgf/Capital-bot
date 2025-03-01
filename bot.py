@@ -11,7 +11,7 @@ def handle_start(message):
 
 @bot.message_handler(commands=['help'])
 def handle_help(message):
-    bot.send_message(message.chat.id, "Доступные команды:\n/capital [страна] - показать столицу указанной страны")
+    bot.send_message(message.chat.id, "Доступные команды: /capital - показать столицу указанной страны")
 
 @bot.message_handler(commands=['capital'])
 def handle_capital(message):

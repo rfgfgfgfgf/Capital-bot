@@ -8,8 +8,8 @@ class DB_Manager:
         """Получает столицу страны из базы данных"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        cursor.execute("SELECT capital_exonym FROM countries_and_capitals WHERE country_exonym = ?", (country,))
+        cursor.execute("SELECT city FROM database WHERE country = ?", (country,))
         result = cursor.fetchone()
         conn.close()
 
-        return result[0] 
+        return result[0]
