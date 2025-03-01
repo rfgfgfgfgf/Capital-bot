@@ -3,7 +3,7 @@ from config import TOKEN, DATABASE
 from logic import DB_Manager
 
 bot = telebot.TeleBot(TOKEN)
-manager = DB_Manager(DATABASE)  # Создаем объект для работы с БД
+manager = DB_Manager(DATABASE)  
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
@@ -15,7 +15,7 @@ def handle_help(message):
 
 @bot.message_handler(commands=['capital'])
 def handle_capital(message):
-    country_name = ' '.join(message.text.split()[1:])  # Получаем название страны
+    country_name = ' '.join(message.text.split()[1:])  
     capital = manager.get_capital(country_name)
     
     if capital:
